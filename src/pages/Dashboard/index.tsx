@@ -3,7 +3,7 @@ import { useContacts } from "../../hooks/useContacts";
 import { useUser } from "../../hooks/useUser";
 
 export const Dashboard = () => {
-  const { contacts, readContacts } = useContacts();
+  const { contacts, readContacts, createPDF } = useContacts();
   const { user } = useUser();
 
   useEffect(() => {
@@ -13,6 +13,8 @@ export const Dashboard = () => {
   return (
     <>
       <div>{user.name}</div>
+
+      <button onClick={createPDF}>Gerar PDF</button>
 
       <ul>
         {contacts.length &&
